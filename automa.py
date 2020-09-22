@@ -4,10 +4,10 @@ from openpyxl.descriptors import MinMax, Sequence
 import time
 import sys
 wb = load_workbook(
-    "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-09-08_09_46.xlsx")
+    "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-09-21_09_46.xlsx")
 ws = wb.active
 col = ws['F']
-cont = 2
+linha = 2
 
 dicionario = [
     "Comissão de Valores Mobiliários", "Casa da Moeda do Brasil",
@@ -27,24 +27,39 @@ dicionario = [
     "Banco Nacional de Desenvolvimento Econômico e Social", "BNDES",
     "Financiadora de Estudos e Projetos"
 ]
-while cont <= ws.max_row:
-    for item in dicionario:
-        try:
-            if item in ws['F' + str(cont)].value:
-                print(ws['F' + str(cont)].value)
-                '''time.sleep(5)'''
-                break
-            else:
-                if item == dicionario[-1]:
-                    ws.delete_rows(cont)
-                    print(ws.max_row)
-                    print(cont)
+
+
+def filtro(dicionario, max_row, linha):
+    while linha <= ws.max_row:
+        for item in dicionario:
+            try:
+                if item in ws['F' + str(linha)].value:
+                    print(ws['F' + str(linha)].value)
+                    break
                 else:
-                    continue
-        except:
-            ws.delete_rows(cont)
-    cont = cont + 1
-    
-'''if item in ws.max_row.value:'''
+                    if item == dicionario[-1]:
+                        ws.delete_rows(linha)
+                    else:
+                        continue
+            except:
+                ws.delete_rows(linha)
+        linha = linha + 1
+
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+filtro(dicionario, ws.max_row, linha)
+
+'''ultima = ws.max_row
+while ws['F' + str(ultima)].value != "":
+  filtro(dicionario, ws.max_row, linha)'''
+  
+  
 wb.save(
-    "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-09-08_09_46.xlsx")
+    "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-09-21_09_46.xlsx")
