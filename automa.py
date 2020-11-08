@@ -3,20 +3,12 @@ import json
 from openpyxl.descriptors import MinMax, Sequence
 import time
 import sys
+from tkinter import filedialog
 
+SelecArquivos = filedialog.askopenfilenames()
+arquivos = ["C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-10_(outubro).xlsx"]
 
-arquivos = ["C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-10_(outubro).xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-10-30_23_45.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-11-03_09_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-11-04_09_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/dispensas_2020-11-05_09_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-10-30_23_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-11-04_09_47.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-11-05_09_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-11-03_09_46.xlsx",
-            "C:/Users/alexandre.borges/Documents/TCU/pubs_secao3_2020-10_(outubro).xlsx"]
-
-for item in arquivos:
+for item in SelecArquivos:
   print(item)
   wb = load_workbook(item)
   ws = wb.active
