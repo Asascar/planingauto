@@ -16,22 +16,17 @@ for item in SelecArquivos:
   linha = 2
 
   dicionario = [
-      "Comissão de Valores Mobiliários", "Casa da Moeda do Brasil",
-      "Fundação Instituto Brasileiro de Geografia",
-      "Instituto Nacional da Propriedade Industrial",
-      "Instituto Nacional de Metrologia",
-      "NAV Brasil Serviços de Navegação Aérea S.A",
-      "Superintendência de Seguros Privados",
-      "Centrais Elétricas Brasileiras S/A",
-      "Centro de Pesquisa de Energia Elétrica",
-      "Comissão Nacional de Energia Nuclear", "Eletrobrás Participações S.A",
-      "Eletrobrás Termonuclear S/A", "Furnas Centrais Elétricas S/A",
-      "Indústrias Nucleares do Brasil S/A", "Itaipu Binacional",
-      "Nuclebrás Equipamentos Pesados S/A",
-      "Agência Brasileira Gestora de Fundos Garantidores e Garantias S.A",
-      "Agência Especial de Financiamento Industrial",
-      "Banco Nacional de Desenvolvimento Econômico e Social", "BNDES",
-      "Financiadora de Estudos e Projetos"
+      "Banco do Brasil",
+      "Banco do Nordeste",
+      "Banco da Amazônia",
+      "Caixa Econômica Federal",
+      "Banco Central",
+      "Casa da Moeda",
+      "Comissão de Valores Mobiliários",
+      "Susep",
+      "BNDES",
+      "Associação Brasileira de Fundos Garantidores",
+      "Banco Nacional de Desenvolvimento Econômico e Social"
   ]
 
 
