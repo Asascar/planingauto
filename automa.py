@@ -6,16 +6,14 @@ import sys
 from tkinter import filedialog
 import unicodedata
 
-dicionario = []
 def lista(linha,dicionario):
     SelecArquivos = filedialog.askopenfilename(title='Dicionário de dados')
     wb = load_workbook(SelecArquivos)
     ws = wb.active
     while linha <= ws.max_row:
-        dicionario.append(unicodedata.normalize('NFKC',ws['A' + str(linha)].value))
+        dicionario.append(unicodedata.normalize('NFKC',ws['A' + str(linha)].value).strip())
         linha += 1
-    return dicionario
-    
+    return dicionario    
 def planingauto(dicionario):
     SelecArquivos = filedialog.askopenfilenames(title='Planilha a ser filtrada')
 
@@ -51,6 +49,6 @@ def planingauto(dicionario):
     filtro(dicionario, linha)
     filtro(dicionario, linha)            
     wb.save(item)
-
+dicionario = []
 lista(1,dicionario)
 planingauto(dicionario)
